@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>家具家居 - 网上购物商城</title>
-    <link rel="stylesheet" href="../../css/styles.css">
+    <title>床 - 网上购物商城</title>
+    <link rel="stylesheet" href="../../../css/styles.css">
 </head>
 <body>
     <div class="page-container">
@@ -16,46 +16,32 @@
                 </div>
             </header>
 
-            <!-- 导航路径 -->
+            <!-- 商品页的导航路径 -->
             <nav class="breadcrumb">
                 <ul>
-                    <li><a href="../../index/index.html">首页</a></li>
-                    <li>家具家居</li>
+                    <li><a href="../../../index/index.html">首页</a></li>
+                    <li><a href="../furniture.html">家具家居</a></li>
+                    <li>床</li>
                 </ul>
             </nav>
 
             <!-- 主要内容区域 -->
             <main class="main-content">
-                <!-- 分类列表 -->
-                <aside class="categories">
-                    <h2>商品分类</h2>
-                    <ul>
-                        <li><a href="../electronics/electronics.html">电子产品</a></li>
-                        <li><a href="../clothing/clothing.html">服装服饰</a></li>
-                        <li><a href="../food/food.html">食品生鲜</a></li>
-                        <li><a href="../furniture/furniture.html">家具家居</a></li>
-                    </ul>
-                </aside>
-
-                <!-- 商品列表 -->
-                <section class="products-grid">
-                    <div class="product-card">
-                        <a href="./products/bed.html">
-                            <img src="./images/bed.jpg" alt="床" class="product-image">
-                            <h3 class="product-name">床</h3>
-                        </a>
-                        <p class="product-price">¥5499</p>
+                <!-- 商品详情 -->
+                <div class="product-detail">
+                    <div class="product-images">
+                        <img src="../images/bed.jpg" alt="床" class="product-detail-image">
+                    </div>
+                    <div class="product-info">
+                        <h1 class="product-title">床</h1>
+                        <p class="product-description">
+                            优质实木或金属框架床，稳固耐用，搭配舒适床垫，提供良好
+                            支撑力。简约设计，适合各种卧室风格，助您享受高质量睡眠。
+                        </p>
+                        <div class="product-price">¥5499</div>
                         <button class="add-to-cart">加入购物车</button>
                     </div>
-                    <div class="product-card">
-                        <a href="./products/sofa.html">
-                            <img src="./images/sofa.jpg" alt="沙发" class="product-image">
-                            <h3 class="product-name">沙发</h3>
-                        </a>
-                        <p class="product-price">¥3999</p>
-                        <button class="add-to-cart">加入购物车</button>
-                    </div>
-                </section>
+                </div>
 
                 <!-- 购物车悬浮窗 -->
                 <div class="shopping-cart">
@@ -65,7 +51,7 @@
                     </div>
                     <div class="cart-items">
                         <div class="cart-item">
-                            <img src="../../index/images/phone.jpg" alt="商品缩略图" class="item-thumbnail">
+                            <img src="../images/phone.jpg" alt="商品缩略图" class="item-thumbnail">
                             <div class="item-details">
                                 <span class="item-name">智能手机</span>
                                 <span class="item-price">¥2999</span>
@@ -76,7 +62,7 @@
                             </div>
                         </div>
                         <div class="cart-item">
-                            <img src="../../index/images/pad.jpg" alt="商品缩略图" class="item-thumbnail">
+                            <img src="../images/pad.jpg" alt="商品缩略图" class="item-thumbnail">
                             <div class="item-details">
                                 <span class="item-name">平板电脑</span>
                                 <span class="item-price">¥3999</span>
@@ -87,7 +73,7 @@
                             </div>
                         </div>
                         <div class="cart-item">
-                            <img src="../../index/images/laptop.jpg" alt="商品缩略图" class="item-thumbnail">
+                            <img src="../images/laptop.jpg" alt="商品缩略图" class="item-thumbnail">
                             <div class="item-details">
                                 <span class="item-name">笔记本电脑</span>
                                 <span class="item-price">¥4999</span>
@@ -115,15 +101,15 @@
                 <section class="footer-section">
                     <h4>关于我们</h4>
                     <ul>
-                        <li><a href="../../about">公司介绍</a></li>
-                        <li><a href="../../contact">联系我们</a></li>
+                        <li><a href="/about">公司介绍</a></li>
+                        <li><a href="/contact">联系我们</a></li>
                     </ul>
                 </section>
                 <section class="footer-section">
                     <h4>客户服务</h4>
                     <ul>
-                        <li><a href="../../help">帮助中心</a></li>
-                        <li><a href="../../returns">退货政策</a></li>
+                        <li><a href="/help">帮助中心</a></li>
+                        <li><a href="/returns">退货政策</a></li>
                     </ul>
                 </section>
             </div>
