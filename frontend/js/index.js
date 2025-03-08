@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // 配置常量
-const API_URL = 'http://127.0.0.1:8000';
+const API_URL = 'http://23.99.121.33:8080';
 const cart = [];
 
 // DOM 元素选择器

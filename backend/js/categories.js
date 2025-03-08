@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const categoryNameInput = document.getElementById('categoryName');
     const resetFormBtn = document.getElementById('resetFormBtn');
 
-    const API_URL = 'http://127.0.0.1:8000';
+    const API_URL = 'http://23.99.121.33:8080';
 
     // 从后端获取分类数据
     async function fetchCategories() {
