@@ -1,0 +1,362 @@
+/* 重置默认样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 基础样式 */
+html, body {
+    height: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* 页面容器 */
+.page-container {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-wrapper {
+    flex: 1;
+}
+
+/* 头部样式 */
+.main-header {
+    background: #FF4400;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.logo {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+}
+
+/* 面包屑导航 */
+.breadcrumb {
+    max-width: 1200px;
+    margin: 1rem auto;
+    padding: 0 1rem;
+}
+
+.breadcrumb ul {
+    display: flex;
+    list-style: none;
+}
+
+.breadcrumb li:not(:last-child)::after {
+    content: ">";
+    margin: 0 0.5rem;
+    color: #666;
+}
+
+.breadcrumb a {
+    color: #666;
+    text-decoration: none;
+}
+
+/* 主要内容区域 */
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    gap: 2rem;
+}
+
+/* 分类列表 */
+.categories {
+    width: 200px;
+    flex-shrink: 0;
+    background: white;
+    padding: 1rem;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    height: fit-content;
+}
+
+.categories h2 {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.categories ul {
+    list-style: none;
+}
+
+.categories li {
+    margin-bottom: 0.5rem;
+}
+
+.categories a {
+    color: #666;
+    text-decoration: none;
+    display: block;
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+
+.categories a:hover {
+    background: #f5f5f5;
+    color: #FF4400;
+}
+
+/* 商品网格 */
+.products-grid {
+    display: flex;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+}
+
+/* 商品卡片 */
+.product-card {
+    width: 200px;
+    background: white;
+    border: 1px solid #eee;
+    padding: 1rem;
+    border-radius: 4px;
+    transition: transform 0.2s;
+}
+
+.product-card a {
+    text-decoration: none; /* 保持不变 */
+}
+
+/* 商品图片 */
+.product-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    min-height: 200px;
+    border-radius: 4px;
+    margin-bottom: 0.4rem;
+}
+
+/* 价格样式 */
+.product-price {
+    display: block;
+    color: #FF4400;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 0.4rem;
+}
+
+/* 购买操作区域 */
+.product-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* 数量选择输入框 */
+.quantity-input {
+    width: 60px;
+    padding: 5px;
+    text-align: center;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* 按钮通用样式 */
+.add-to-cart, .checkout-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    border: none;
+    color: white;
+}
+
+/* 添加到购物车按钮 */
+.add-to-cart {
+    background: #FF4400;
+}
+
+.add-to-cart:hover {
+    background: #be3301;
+}
+
+/* 购物车悬浮窗 */
+.shopping-cart {
+    position: fixed;
+    top: 50%;
+    right: -300px;
+    width: 300px;
+    background: white;
+    padding: 1rem;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+    transition: right 0.3s;
+    z-index: 1000;
+    transform: translateY(-50%);
+}
+
+.shopping-cart::before {
+    content: "🛒";
+    position: absolute;
+    left: -40px;
+    width: 40px;
+    height: 40px;
+    background: #FF4400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+}
+
+.shopping-cart:hover {
+    right: 0;
+}
+
+/* 购物车内商品 */
+.cart-item {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.item-details {
+    display: block; /* item-name 和 item-price 各占一行 */
+    flex-grow: 1; /* 使 item-details 部分占据剩余空间 */
+}
+
+.item-thumbnail {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.item-name,
+.item-price {
+    display: block; /* 让每个项目独占一行 */
+    margin-bottom: 5px;
+}
+
+.item-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 30%;
+}
+
+/* 控制购物车数量输入框 */
+.item-quantity {
+    width: 60px;
+    font-size: 16px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* 购物车结算按钮 */
+.checkout-button {
+    font-size: 16px;
+    padding: 10px 20px;
+    background-color: #FF4400;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.checkout-button:hover {
+    background-color: #2eaf4a;
+}
+
+.product-detail {
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    gap: 5rem; /* 控制 `product-images` 和 `product-info` 之间的间隙 */
+    max-width: 1000px;
+    margin: auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 8px;
+}
+
+
+.product-detail-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* 左侧商品图片 */
+.product-image-area {
+    flex: 1;
+    max-width: 400px;
+}
+
+.product-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 右侧商品信息 */
+.product-info {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* 页脚 */
+.main-footer {
+    background: #f5f5f5;
+    padding: 1rem 0;
+
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    padding: 0 1rem;
+}
+
+.footer-section h4 {
+    margin-bottom: 1rem;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section a {
+    color: #666;
+    text-decoration: none;
+    line-height: 1.8;
+}

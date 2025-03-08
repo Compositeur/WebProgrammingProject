@@ -1,0 +1,367 @@
+/* 重置默认样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 基础样式 */
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* 页面容器 */
+.page-container {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-wrapper {
+    flex: 1;
+}
+
+/* 头部样式 */
+.main-header {
+    background: #FF4400;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.logo {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* 主要内容区域 */
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    gap: 2rem;
+}
+
+/* 左侧功能菜单 */
+.categories {
+    width: 200px;
+    flex-shrink: 0;
+    background: white;
+    padding: 1rem;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    height: fit-content;
+}
+
+.categories h2 {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.categories ul {
+    list-style: none;
+}
+
+.categories li {
+    margin-bottom: 0.5rem;
+}
+
+.categories a {
+    color: #666;
+    text-decoration: none; /* 去除下划线 */
+    display: block;
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+
+.categories a:hover {
+    background: #f5f5f5;
+    color: #FF4400;
+}
+
+/* 右侧管理面板 */
+.admin-panel {
+    flex: 1;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.admin-panel h2 {
+    margin-bottom: 1.5rem;
+    color: #333;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.5rem;
+    position: relative;
+}
+
+/* 右上角按钮 */
+.float-right {
+    float: right;
+}
+
+/* 搜索栏样式：横向排列 */
+.filter-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.filter-container .form-group {
+    flex: 1;
+    min-width: 200px; /* 保持输入框和选择框的最小宽度 */
+}
+
+.filter-container .form-control {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.filter-container button {
+    padding: 0.5rem 1rem;
+    white-space: nowrap; /* 防止按钮缩小 */
+}
+
+#filterBtn {
+    margin-top: auto; /* 自动推到底部 */
+    margin-bottom: 1rem; /* 让按钮底部留 1rem 间距 */
+}
+
+/* 表单样式 */
+.form-control {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.form-group {
+    margin-top: 15px;
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+/* 调整按钮之间的间距 */
+.form-group button {
+    margin-right: 10px;  /* 给每个按钮添加右外边距 */
+}
+
+.form-group button:last-child {
+    margin-right: 0;  /* 最后的按钮不需要右外边距 */
+}
+
+textarea.form-control {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* 按钮样式 */
+.btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+    display: inline-block;
+}
+
+.btn-primary {
+    background: #FF4400;
+    text-decoration: none; /* 去除名称下划线 */
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #c03001;
+}
+
+.btn-danger {
+    background: #dc3545;
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #bd2131;
+}
+
+.edit-btn {
+    background-color: #007bff;  /* 蓝色，强调编辑 */
+    color: white;
+    border-radius: 4px;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.edit-btn:hover {
+    background-color: #0056b3; /* 鼠标悬停时更深的蓝色 */
+}
+
+.delete-btn {
+    background-color: #dc3545; /* 红色，强调删除 */
+    color: white;
+    border-radius: 4px;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.delete-btn:hover {
+    background-color: #bd2131; /* 鼠标悬停时更深的红色 */
+}
+
+/* 给按钮之间添加空隙 */
+td button {
+    margin-right: 10px;  /* 为按钮添加右外边距 */
+}
+
+/* 防止最后一个按钮有多余的右边距 */
+td button:last-child {
+    margin-right: 0;
+}
+
+/* 数据表格样式 */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.data-table th, 
+.data-table td {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.data-table th {
+    background: #f8f8f8;
+}
+
+.data-table tr:hover {
+    background: #f5f5f5;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* 描述列样式 */
+.data-table td:nth-child(4) {
+    max-width: 250px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* 商品缩略图 */
+.thumbnail-preview {
+    max-width: 100px;
+    max-height: 100px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+/* 页脚 */
+.main-footer {
+    background: #f5f5f5;
+    padding: 2rem 0;
+    margin-top: 2rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    padding: 0 1rem;
+}
+
+.footer-section h4 {
+    margin-bottom: 1rem;
+}
+
+/* 弹出消息框背景样式 */
+.message-modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1100;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 500px;
+}
+
+/* 弹出消息框内容样式 */
+.message-modal-content {
+    background-color: #fff;
+    padding: 20px;  /* 调整内边距 */
+    border: 1px solid #888;
+    text-align: center;
+    width: 80%;  /* 宽度为 .modal-content 的80% */
+}
+
+/* 确保模态框背景样式 */
+.modal-overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* 编辑分类框样式 */
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 100%;
+    max-width: 500px;  /* 设置最大宽度 */
+}
+
+/* 删除确认框的样式 */
+.confirm-delete-modal .modal-content {
+    width: 50%;  /* 确保确认删除框宽度适中 */
+}
+
+.confirm-delete-modal .modal-content h3 {
+    margin-bottom: 1rem;
+}

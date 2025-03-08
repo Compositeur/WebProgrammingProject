@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>分类详情 - 网上购物商城</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="page-container">
+        <div class="content-wrapper">
+            <header class="main-header">
+                <div class="header-content">
+                    <a href="../index/index.html" class="logo">购物商城</a>
+                </div>
+            </header>
+
+            <!-- 商品页的导航路径 -->
+            <nav class="breadcrumb">
+                <ul>
+                    <li><a href="../index/index.html">首页</a></li>
+                </ul>
+            </nav>
+
+            <main id= products-display class="main-content">
+                <aside class="categories">
+                    <h2>商品分类</h2>
+                    <ul id="category-list"></ul>
+                </aside>
+
+                <section class="products-grid" id="product-container">
+                    <!-- 商品列表将在这里动态加载 -->
+                </section>
+            </main>
+
+            <!-- 购物车悬浮窗 -->
+            <div class="shopping-cart">
+                <div class="cart-header">
+                    <h2>购物车</h2>
+                    <span class="cart-count" id="cart-count">0件商品</span>
+                </div>
+                <div class="cart-items" id="cart-items"></div>
+                <div class="cart-footer">
+                    <div class="cart-total">
+                        <span>总计：</span>
+                        <span class="total-price" id="cart-total-price">¥0</span>
+                    </div>
+                    <button class="checkout-button">结算</button>
+                </div>
+            </div>
+        </div>
+
+        <footer class="main-footer">
+            <div class="footer-content">
+                <section class="footer-section">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="about.html">公司介绍</a></li>
+                        <li><a href="contact.html">联系我们</a></li>
+                    </ul>
+                </section>
+                <section class="footer-section">
+                    <h4>客户服务</h4>
+                    <ul>
+                        <li><a href="/help">帮助中心</a></li>
+                        <li><a href="/returns">退货政策</a></li>
+                    </ul>
+                </section>
+            </div>
+        </footer>
+    </div>
+
+    <!-- 分类模板 -->
+    <template id="category-template">
+        <li>
+            <a href="#"></a>
+        </li>
+    </template>
+
+    <!-- 商品排列模板 -->
+    <template id="products-container">
+        <section class="products-grid">
+        </section>
+    </template>
+
+    <!-- 商品模板 -->
+    <template id="product-template">
+        <div class="product-card">
+            <a class="product-link">
+                <img src="" alt="" class="product-image">
+                <h3></h3>
+            </a>
+            <span class="product-price"></span>
+            <button class="add-to-cart">加入购物车</button>
+        </div>
+    </template>
+
+    <!-- 购物车项目模板 -->
+    <template id="cart-item-template">
+        <div class="cart-item">
+            <img src="" alt="" class="item-thumbnail">
+            <div class="item-details">
+                <span class="item-name"></span>
+                <span class="item-price"></span>
+            </div>
+            <div class="item-actions">
+                <input type="number" min="1" class="item-quantity">
+                <button class="remove-item">×</button>
+            </div>
+        </div>
+    </template>
+    <script src="../js/index.js"></script>
+</body>
+</html>

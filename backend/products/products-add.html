@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新增商品 - 商城管理系统</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="page-container">
+        <div class="content-wrapper">
+            <!-- 头部区域 -->
+            <header class="main-header">
+                <div class="header-content">
+                    <div class="logo">商城管理系统</div>
+                </div>
+            </header>
+
+            <!-- 主要内容区域 -->
+            <main class="main-content">
+                <!-- 功能列表 -->
+                <aside class="categories">
+                    <h2>功能</h2>
+                    <ul>
+                        <li><a href="../categories/categories-list.html">分类列表</a></li>
+                        <li><a href="products-list.html">商品列表</a></li>
+                    </ul>
+                </aside>
+
+                <!-- 商品管理面板 -->
+                <section class="admin-panel">
+                    <h2>新增商品
+                        <a href="products-list.html" class="btn btn-primary float-right">返回商品列表</a>
+                    </h2>
+
+                    <!-- 消息提示区域 -->
+                    <div id="message-container"></div>
+
+                    <!-- 新增商品表单 -->
+                    <form id="productForm" enctype="multipart/form-data">
+                        <input type="hidden" id="productId" name="pid">
+                        <div class="form-group">
+                            <label for="categorySelect">选择分类：</label>
+                            <select id="categorySelect" name="catid" class="form-control" required>
+                                <option value="">-- 请选择分类 --</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="productName">商品名称：</label>
+                            <input type="text" id="productName" name="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="productPrice">商品价格：</label>
+                            <input type="number" id="productPrice" name="price" step="0.01" min="0" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="productDescription">商品描述：</label>
+                            <textarea id="productDescription" name="description" class="form-control" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="productImage">商品图片：</label>
+                            <input type="file" id="productImage" name="image" class="form-control" accept=".jpg,.jpeg,.png,.gif" required>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">保存商品</button>
+                            <button type="button" id="resetFormBtn" class="btn btn-danger">取消</button>
+                        </div>
+                    </form>
+                </section>
+            </main>
+        </div>
+
+        <!-- 页脚 -->
+        <footer class="main-footer">
+            <div class="footer-content">
+                <section class="footer-section">
+                    <h4>商城管理系统</h4>
+                    <p>© 2025 版权所有</p>
+                </section>
+            </div>
+        </footer>
+    </div>
+
+    <!-- 操作成功/失败提示对话框 -->
+    <template id="message-dialog-template">
+        <div class="message-modal">
+            <div class="message-modal-content">
+                <h4></h4>
+                <p></p>
+                <button id="closeMessageDialog" class="btn btn-primary">确定</button>
+            </div>
+        </div>
+    </template>
+    
+    <script src="../js/products.js"></script>
+</body>
+</html>

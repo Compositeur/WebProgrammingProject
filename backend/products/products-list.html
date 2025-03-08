@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品列表 - 商城管理系统</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="page-container">
+        <div class="content-wrapper">
+            <!-- 头部区域 -->
+            <header class="main-header">
+                <div class="header-content">
+                    <div class="logo">商城管理系统</div>
+                </div>
+            </header>
+
+            <!-- 主要内容区域 -->
+            <main class="main-content">
+                <!-- 功能列表 -->
+                <aside class="categories">
+                    <h2>功能</h2>
+                    <ul>
+                        <li><a href="../categories/categories-list.html">分类列表</a></li>
+                        <li><a href="products-list.html">商品列表</a></li>
+                    </ul>
+                </aside>
+
+                <!-- 商品管理面板 -->
+                <section class="admin-panel">
+                    <h2>商品列表
+                        <a href="products-add.html" class="btn btn-primary float-right">新增商品</a>
+                    </h2>
+
+                    <!-- 查询区域 -->
+                    <div class="filter-container">
+                        <div class="form-group">
+                            <label for="categoryFilter">选择分类：</label>
+                            <select id="categoryFilter" class="form-control">
+                                <option value="">-- 请选择分类 --</option>
+                                <!-- 动态加载分类选项 -->
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="nameFilter">商品名称：</label>
+                            <input type="text" id="nameFilter" class="form-control" placeholder="输入商品名称">
+                        </div>
+
+                        <button id="filterBtn" class="btn btn-primary">查询</button>
+                    </div>
+
+                    <!-- 商品列表表格 -->
+                    <h3>商品列表</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>商品名称</th>
+                                <th>分类</th>
+                                <th>价格</th>
+                                <th>描述</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody id="productsTableBody">
+                            <!-- 商品数据将通过JavaScript动态添加 -->
+                        </tbody>
+                    </table>        
+                </section>
+            </main>
+        </div>
+
+        <!-- 页脚 -->
+        <footer class="main-footer">
+            <div class="footer-content">
+                <section class="footer-section">
+                    <h4>商城管理系统</h4>
+                    <p>© 2025 版权所有</p>
+                </section>
+            </div>
+        </footer>
+    </div>
+
+    <!-- 确认删除对话框 -->
+    <template id="delete-confirmation-template">
+        <div class="modal modal-overlay confirm-delete-modal">
+            <div class="modal-content">
+                <h3>确认删除</h3>
+                <p>您确定要删除此分类吗？</p>
+                <div class="form-group">
+                    <button id="confirmDeleteBtn" class="btn btn-primary">确认删除</button>
+                    <button id="cancelDeleteBtn" class="btn btn-danger">取消</button>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <!-- 商品表格每行的编辑及删除按钮 -->
+    <template id="product-row-template">
+        <tr>
+        <td class="product-name"></td>
+        <td class="product-category"></td>
+        <td class="product-price"></td>
+        <td class="product-description"></td>
+        <td>
+            <button class="btn btn-primary btn-sm edit-btn">编辑</button>
+            <button class="btn btn-danger btn-sm delete-btn">删除</button>
+        </td>
+        </tr>
+    </template>
+
+    <!-- 操作成功/失败提示对话框 -->
+    <template id="message-dialog-template">
+        <div class="message-modal">
+            <div class="message-modal-content">
+                <h4></h4>
+                <p></p>
+                <button id="closeMessageDialog" class="btn btn-primary">确定</button>
+            </div>
+        </div>
+    </template>       
+
+    <script src="../js/products.js"></script>
+</body>
+</html>
