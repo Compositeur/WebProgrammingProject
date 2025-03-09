@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // 从后端获取分类数据
     async function fetchCategories() {
         try {
-            const response = await fetch(`${API_URL}/categories`);
+            const response = await fetch(`${API_URL}/api/categories`);
             if (!response.ok) {
                 throw new Error('获取分类数据失败');
             }
@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // 删除分类
     async function deleteCategory(catid) {
         try {
-            const response = await fetch(`${API_URL}/categories/${catid}`, {
+            const response = await fetch(`${API_URL}/api/categories/${catid}`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json'
@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // 更新分类
     async function updateCategory(catid, newName, modal) {
         try {
-            const response = await fetch(`${API_URL}/categories/${catid}`, {
+            const response = await fetch(`${API_URL}/api/categories/${catid}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'
@@ -240,7 +240,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // 添加分类函数
     async function addCategory(categoryName) {
         try {
-            const response = await fetch(`${API_URL}/categories`, {
+            const response = await fetch(`${API_URL}/api/categories`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

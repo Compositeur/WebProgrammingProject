@@ -46,7 +46,7 @@ const cartItemTemplate = document.getElementById('cart-item-template');
 // 获取分类列表
 async function fetchCategories() {
     try {
-        const response = await fetch(`${API_URL}/categories`);
+        const response = await fetch(`${API_URL}/api/categories`);
         if (!response.ok) {
             throw new Error('获取分类数据失败');
         }
@@ -87,7 +87,7 @@ function displayCategories(categories) {
 // 获取分类名称并渲染
 async function fetchCategoryDetail(catid) {
     try {
-        const response = await fetch(`${API_URL}/categories/${catid}`);
+        const response = await fetch(`${API_URL}/api/categories/${catid}`);
         if (!response.ok) {
             throw new Error('获取分类名称失败');
         }
@@ -108,7 +108,7 @@ async function fetchCategoryDetail(catid) {
 // 获取商品详情并渲染
 async function fetchProductDetail(pid) {
     try {
-        const response = await fetch(`${API_URL}/products/${pid}`);
+        const response = await fetch(`${API_URL}/api/products/${pid}`);
         if (!response.ok) {
             throw new Error('获取商品信息失败');
         }
@@ -186,7 +186,7 @@ function renderProductDetail(product) {
 // 获取指定分类下的所有商品
 async function renderCategoryDetail(category) {
     try {
-        const response = await fetch(`${API_URL}/products`);
+        const response = await fetch(`${API_URL}/api/products`);
         if (!response.ok) {
             throw new Error('获取商品数据失败');
         }

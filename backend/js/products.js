@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // 从后端获取商品数据
     async function fetchProducts() {
         try {
-            const response = await fetch(`${API_URL}/products`);
+            const response = await fetch(`${API_URL}/api/products`);
             if (!response.ok) {
                 throw new Error('获取商品数据失败');
             }
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     async function fetchProductDetails(pid) {
         try {
-            const response = await fetch(`${API_URL}/products/${pid}`);
+            const response = await fetch(`${API_URL}/api/products/${pid}`);
             if (!response.ok) {
                 throw new Error('获取商品详情失败');
             }
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // 从后端获取分类数据
     async function fetchCategories() {
         try {
-            const response = await fetch(`${API_URL}/categories`);
+            const response = await fetch(`${API_URL}/api/categories`);
             if (!response.ok) {
                 throw new Error('获取分类数据失败');
             }
@@ -184,7 +184,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // 删除商品
     async function deleteProduct(pid) {
         try {
-            const response = await fetch(`${API_URL}/products/${pid}`, {
+            const response = await fetch(`${API_URL}/api/products/${pid}`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json'
@@ -224,7 +224,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (image) {
                 formData.append('image', image);
             }
-            const response = await fetch(`${API_URL}/products/${pid}`, {
+            const response = await fetch(`${API_URL}/api/products/${pid}`, {
                 method: 'PUT',
                 body: formData // 不需要设置Content-Type，浏览器会自动设置
             });
@@ -364,7 +364,7 @@ document.addEventListener('DOMContentLoaded', function() {
             formData.append("description", description);
             formData.append('image', image);
 
-            const response = await fetch(`${API_URL}/products`, {
+            const response = await fetch(`${API_URL}/api/products`, {
                 method: 'POST',
                 body: formData // 不需要设置Content-Type，浏览器会自动设置
             });
