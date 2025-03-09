@@ -220,10 +220,8 @@ document.addEventListener('DOMContentLoaded', function() {
             formData.append("catid", catid);
             formData.append("price", price);
             formData.append("description", description);
-
-            if (image) {
-                formData.append('image', image);
-            }
+            formData.append('image', image);
+            
             const response = await fetch(`${API_URL}/api/products/${pid}`, {
                 method: 'PUT',
                 body: formData // 不需要设置Content-Type，浏览器会自动设置
