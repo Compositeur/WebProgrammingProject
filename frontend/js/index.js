@@ -225,7 +225,7 @@ function displayProducts(products) {
         // 设置商品详情链接
         const productLink = productCard.querySelector('a');
         productLink.href = `./product.html?pid=${product.pid}`;
-        productCard.querySelector('img').src = product.imageUrl;
+        productCard.querySelector('img').src = product.thumbnailUrl;
         productCard.querySelector('img').alt = product.name;
         productCard.querySelector('h3').textContent = product.name;
         productCard.querySelector('.product-price').textContent = `¥${product.price}`;
