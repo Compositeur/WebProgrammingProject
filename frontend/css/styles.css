@@ -155,7 +155,7 @@ html, body {
     width: 100%;
     height: auto;
     object-fit: cover;
-    min-height: 200px;
+    max-height: 200px;
     border-radius: 4px;
     margin-bottom: 0.4rem;
 }
@@ -166,7 +166,6 @@ html, body {
     color: #FF4400;
     font-weight: bold;
     font-size: 20px;
-    margin-bottom: 0.4rem;
 }
 
 /* 购买操作区域 */
@@ -200,6 +199,7 @@ html, body {
 /* 添加到购物车按钮 */
 .add-to-cart {
     background: #FF4400;
+    margin-top: 5px;
 }
 
 .add-to-cart:hover {
